@@ -1,0 +1,77 @@
+<head>
+  <title>bachal</title>
+</head>
+
+<body>
+	<div class="off-canvas-wrap" data-offcanvas> 
+		<div class="inner-wrap"> 
+			<nav class="tab-bar"> 
+				<section class="left-small"> 
+					<a class="left-off-canvas-toggle menu-icon" href="#">
+						<span></span>
+					</a> 
+					</section> 
+
+				<section class="middle tab-bar-section"> 
+					<h1 class="title">বাঁচাল</h1> 
+				</section> 
+
+				<section class="right-small"> 
+					<a class="right-off-canvas-toggle menu-icon" href="#">
+						<span></span>
+					</a> 
+				</section> 
+			</nav> 
+
+			<aside class="left-off-canvas-menu"> 
+				<ul class="off-canvas-list"> 
+					<li><label>Foundation</label></li> 
+					<li><a href="#">The Psychohistorians</a></li> 
+					<li><a href="#">...</a></li> 
+				</ul> 
+			</aside> 
+
+			<aside class="right-off-canvas-menu"> 
+				<ul class="off-canvas-list"> 
+					<li><label>Users</label></li> 
+					<li><a href="#">Hari Seldon</a></li> 
+					<li><a href="#">...</a></li> 
+				</ul> 
+			</aside> 
+
+			<section class="main-section row"> 
+				<div style="float: right">
+					{{> loginButtons align="right"}}<br>
+				</div>
+
+				{{> messages }}
+
+				<div class="message-input">
+					{{> input }}
+				</div>
+			</section> 
+
+			<a class="exit-off-canvas"></a> 
+		</div> 
+	</div>
+</body>
+ 
+<template name="messages">
+	<ul class="chat-thread">
+		{{#each messages}}
+			<li><strong>{{name}}:</strong> {{message}}</li>
+		{{/each}}
+	</ul>
+</template>
+ 
+<template name="input">
+	<div class="chat-window">
+		<input 
+			class="chat-window-message" 
+			id="message_input_field" 
+			name="chat-window-message" 
+			type="text" 
+			autocomplete="off" 
+			autofocus />
+	</div>
+</template> 
